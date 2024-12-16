@@ -19,12 +19,12 @@ func Logger(next http.Handler) http.Handler {
 	return http.HandlerFunc(fn)
 }
 
-func HelloWorld(w http.ResponseWriter, r *http.Request) {
+func HelloWorld(w http.ResponseWriter, _ *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("Hello, World!"))
 
 }
-func HowAreYou(w http.ResponseWriter, r *http.Request) {
+func HowAreYou(w http.ResponseWriter, _ *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("I'm fine, thank you!"))
 
