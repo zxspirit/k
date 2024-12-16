@@ -26,7 +26,7 @@ func main() {
 				if !ok {
 					return
 				}
-				fmt.Println("event:", event)
+				fmt.Println("even1t:", event)
 				if event.Op&fsnotify.Write == fsnotify.Write {
 					fmt.Println("modified file:", event.Name)
 				}
