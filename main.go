@@ -11,7 +11,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer watcher.Close()
+	defer func(watcher *fsnotify.Watcher) {
+		err := watcher.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}(watcher)
 
 	done := make(chan bool)
 	go func() {
